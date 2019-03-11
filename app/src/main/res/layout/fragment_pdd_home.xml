@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srlEnableAutoLoadMore="false">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                app:delay_time="5000"
+                app:indicator_drawable_selected="@drawable/indicator_drawable_selected"
+                app:indicator_drawable_unselected="@drawable/indicator_drawable_unselected"
+                app:indicator_height="6dp"
+                app:indicator_margin="2dp"
+                app:indicator_width="6dp" />
+
+            <com.zd.piao.utils.ReboundHScrollView
+                android:id="@+id/scroll_one"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:fadeScrollbars="false"
+                android:scrollbarSize="2dp"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbarThumbHorizontal="@drawable/seek_blue_bg"
+                android:scrollbarTrackHorizontal="@drawable/seek_bg"
+                android:scrollbars="none">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp" />
+
+            </com.zd.piao.utils.ReboundHScrollView>
+
+            <com.zd.piao.utils.ReboundHScrollView
+                android:id="@+id/scroll_two"
+                android:layout_width="100dp"
+                android:layout_height="8dp"
+                android:layout_gravity="center_horizontal"
+                android:fadeScrollbars="false"
+                android:paddingBottom="6dp"
+                android:scrollbarSize="2dp"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbarThumbHorizontal="@drawable/seek_blue_bg"
+                android:scrollbarTrackHorizontal="@drawable/seek_bg"
+                android:scrollbars="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </com.zd.piao.utils.ReboundHScrollView>
+
+            <ImageView
+                android:id="@+id/image_huodong"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/color_f5f5f5" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

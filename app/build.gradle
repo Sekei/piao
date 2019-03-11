@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.zd.piao"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //状态栏
+    implementation 'com.githang:status-bar-compat:0.7'
+    //recyclerview
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    //SmartRefreshLayout
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'
+    //黄油刀
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //loading相关
+    compile 'com.github.limxing:Android-PromptDialog:1.1.3'
+    //banner
+    compile 'com.youth.banner:banner:1.4.10'
+    //最新版本
+    //Glide框架
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    //万能适配器
+    compile 'com.zhouyou:easyrecyclerview:1.0.5'
+    //viewpager
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+    //圆角头像框架
+    implementation 'com.makeramen:roundedimageview:2.2.1'
+    implementation project(':baselibrary')
+}
